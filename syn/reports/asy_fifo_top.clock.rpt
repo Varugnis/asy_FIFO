@@ -1,0 +1,21 @@
+ 
+****************************************
+Report : clocks
+Design : asy_fifo_top
+Version: L-2016.03-SP1
+Date   : Wed May 20 15:13:05 2026
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+r_clk           10.00   {0 5}                         {r_clk}
+w_clk           10.00   {0 5}                         {w_clk}
+--------------------------------------------------------------------------------
+1

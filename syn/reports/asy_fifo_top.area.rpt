@@ -1,0 +1,53 @@
+ 
+****************************************
+Report : area
+Design : asy_fifo_top
+Version: L-2016.03-SP1
+Date   : Wed May 20 15:13:05 2026
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs (File: /home/synopsys/stdcell/tcbn28hpcplusbwp12t30p140_190a/tcbn28hpcplusbwp12t30p140_180a_ccs/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn28hpcplusbwp12t30p140_180a/tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs.db)
+
+Number of ports:                           60
+Number of nets:                           274
+Number of cells:                          233
+Number of combinational cells:            111
+Number of sequential cells:               113
+Number of macros/black boxes:               0
+Number of buf/inv:                         16
+Number of references:                      31
+
+Combinational area:                 80.639999
+Buf/Inv area:                        5.376000
+Noncombinational area:             300.887996
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                   381.527995
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  -------------------------------------------------------
+asy_fifo_top                       381.5280    100.0   80.6400   278.2080  0.0000  asy_fifo_top
+RAM1/clk_gate_r_data_reg             2.5200      0.7    0.0000     2.5200  0.0000  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+RAM1/clk_gate_ram_mem_reg[0]         2.5200      0.7    0.0000     2.5200  0.0000  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_0
+RAM1/clk_gate_ram_mem_reg[1]         2.5200      0.7    0.0000     2.5200  0.0000  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_1
+RAM1/clk_gate_ram_mem_reg[2]         2.5200      0.7    0.0000     2.5200  0.0000  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_2
+RAM1/clk_gate_ram_mem_reg[3]         2.5200      0.7    0.0000     2.5200  0.0000  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_3
+RAM1/clk_gate_ram_mem_reg[4]         2.5200      0.7    0.0000     2.5200  0.0000  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_4
+RAM1/clk_gate_ram_mem_reg[5]         2.5200      0.7    0.0000     2.5200  0.0000  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_5
+RAM1/clk_gate_ram_mem_reg[6]         2.5200      0.7    0.0000     2.5200  0.0000  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_6
+RAM1/clk_gate_ram_mem_reg[7]         2.5200      0.7    0.0000     2.5200  0.0000  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_7
+--------------------------------  ---------  -------  --------  ---------  ------  -------------------------------------------------------
+Total                                                  80.6400   300.8880  0.0000
+
+1

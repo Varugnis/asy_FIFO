@@ -1,0 +1,25 @@
+# 仿真和波形文件
+*.fsdb
+*.vcd
+*.vpd
+*.trn
+*.dsn
+
+# 编译产生的中间文件和目录
+simv
+simv.daidir/
+csrc/
+INCA_libs/
+work/
+
+# 综合与 EDA 工具日志
+*.log
+*.jou
+*.svf
+*.pvl
+*.syn
+*.mr
+
+# 临时文件
+*.swp
+*~

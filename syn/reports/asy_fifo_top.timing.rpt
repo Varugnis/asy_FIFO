@@ -1,0 +1,1460 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 20
+Design : asy_fifo_top
+Version: L-2016.03-SP1
+Date   : Wed May 20 15:32:57 2026
+****************************************
+
+Operating Conditions: tt0p9v25c   Library: tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+Wire Load Model Mode: segmented
+
+  Startpoint: r_en (input port clocked by r_clk)
+  Endpoint: READ1/EMPTY_reg
+            (rising edge-triggered flip-flop clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  r_en (in)                                               0.00       2.00 r
+  U300/ZN (IND3D1BWP12T30P140)                            0.02       2.02 f
+  U301/ZN (NR2D0BWP12T30P140)                             0.03       2.05 r
+  U327/ZN (AOI21D0BWP12T30P140)                           0.02       2.07 f
+  U328/ZN (AOI31D1BWP12T30P140)                           0.02       2.09 r
+  U330/ZN (OAI22D1BWP12T30P140)                           0.02       2.11 f
+  U343/ZN (AOI221D1BWP12T30P140)                          0.03       2.14 r
+  U346/Z (CKAN2D0BWP12T30P140)                            0.02       2.16 r
+  READ1/EMPTY_reg/D (DFSNQD1BWP12T30P140)                 0.00       2.16 r
+  data arrival time                                                  2.16
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  READ1/EMPTY_reg/CP (DFSNQD1BWP12T30P140)                0.00      10.00 r
+  library setup time                                     -0.02       9.98
+  data required time                                                 9.98
+  --------------------------------------------------------------------------
+  data required time                                                 9.98
+  data arrival time                                                 -2.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.83
+
+
+  Startpoint: r_en (input port clocked by r_clk)
+  Endpoint: READ1/r_addr_grey_reg[2]
+            (rising edge-triggered flip-flop clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  r_en (in)                                               0.00       2.00 r
+  U300/ZN (IND3D1BWP12T30P140)                            0.02       2.02 f
+  U301/ZN (NR2D0BWP12T30P140)                             0.03       2.05 r
+  U327/ZN (AOI21D0BWP12T30P140)                           0.02       2.07 f
+  U328/ZN (AOI31D1BWP12T30P140)                           0.02       2.09 r
+  U330/ZN (OAI22D1BWP12T30P140)                           0.02       2.11 f
+  U331/ZN (INVD0BWP12T30P140)                             0.01       2.13 r
+  READ1/r_addr_grey_reg[2]/D (DFCNQD1BWP12T30P140)        0.00       2.13 r
+  data arrival time                                                  2.13
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  READ1/r_addr_grey_reg[2]/CP (DFCNQD1BWP12T30P140)       0.00      10.00 r
+  library setup time                                     -0.01       9.99
+  data required time                                                 9.99
+  --------------------------------------------------------------------------
+  data required time                                                 9.99
+  data arrival time                                                 -2.13
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.86
+
+
+  Startpoint: r_en (input port clocked by r_clk)
+  Endpoint: READ1/r_addr_grey_reg[1]
+            (rising edge-triggered flip-flop clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  r_en (in)                                               0.00       2.00 r
+  U300/ZN (IND3D1BWP12T30P140)                            0.02       2.02 f
+  U301/ZN (NR2D0BWP12T30P140)                             0.03       2.05 r
+  U302/ZN (AOI21D0BWP12T30P140)                           0.02       2.07 f
+  U325/ZN (MOAI22D0BWP12T30P140)                          0.03       2.10 f
+  U326/ZN (INVD0BWP12T30P140)                             0.01       2.12 r
+  READ1/r_addr_grey_reg[1]/D (DFCNQD1BWP12T30P140)        0.00       2.12 r
+  data arrival time                                                  2.12
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  READ1/r_addr_grey_reg[1]/CP (DFCNQD1BWP12T30P140)       0.00      10.00 r
+  library setup time                                     -0.01       9.99
+  data required time                                                 9.99
+  --------------------------------------------------------------------------
+  data required time                                                 9.99
+  data arrival time                                                 -2.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.87
+
+
+  Startpoint: r_en (input port clocked by r_clk)
+  Endpoint: READ1/r_addr_grey_reg[3]
+            (rising edge-triggered flip-flop clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  r_en (in)                                               0.00       2.00 r
+  U300/ZN (IND3D1BWP12T30P140)                            0.02       2.02 f
+  U301/ZN (NR2D0BWP12T30P140)                             0.03       2.05 r
+  U327/ZN (AOI21D0BWP12T30P140)                           0.02       2.07 f
+  U328/ZN (AOI31D1BWP12T30P140)                           0.02       2.09 r
+  READ1/r_addr_grey_reg[3]/D (DFCNQD1BWP12T30P140)        0.00       2.09 r
+  data arrival time                                                  2.09
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  READ1/r_addr_grey_reg[3]/CP (DFCNQD1BWP12T30P140)       0.00      10.00 r
+  library setup time                                     -0.02       9.98
+  data required time                                                 9.98
+  --------------------------------------------------------------------------
+  data required time                                                 9.98
+  data arrival time                                                 -2.09
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.89
+
+
+  Startpoint: r_en (input port clocked by r_clk)
+  Endpoint: READ1/r_addr_grey_reg[0]
+            (rising edge-triggered flip-flop clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  r_en (in)                                               0.00       2.00 f
+  U300/ZN (IND3D1BWP12T30P140)                            0.01       2.01 r
+  U301/ZN (NR2D0BWP12T30P140)                             0.02       2.02 f
+  U302/ZN (AOI21D0BWP12T30P140)                           0.03       2.05 r
+  U306/ZN (OAI22D1BWP12T30P140)                           0.02       2.08 f
+  U307/ZN (INVD0BWP12T30P140)                             0.01       2.09 r
+  READ1/r_addr_grey_reg[0]/D (DFCNQD1BWP12T30P140)        0.00       2.09 r
+  data arrival time                                                  2.09
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  READ1/r_addr_grey_reg[0]/CP (DFCNQD1BWP12T30P140)       0.00      10.00 r
+  library setup time                                     -0.01       9.99
+  data required time                                                 9.99
+  --------------------------------------------------------------------------
+  data required time                                                 9.99
+  data arrival time                                                 -2.09
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.90
+
+
+  Startpoint: r_en (input port clocked by r_clk)
+  Endpoint: READ1/r_addr_reg[2]
+            (rising edge-triggered flip-flop clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  r_en (in)                                               0.00       2.00 r
+  U300/ZN (IND3D1BWP12T30P140)                            0.02       2.02 f
+  U301/ZN (NR2D0BWP12T30P140)                             0.03       2.05 r
+  U324/ZN (MAOI22D1BWP12T30P140)                          0.03       2.07 r
+  READ1/r_addr_reg[2]/D (DFCNQD1BWP12T30P140)             0.00       2.07 r
+  data arrival time                                                  2.07
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  READ1/r_addr_reg[2]/CP (DFCNQD1BWP12T30P140)            0.00      10.00 r
+  library setup time                                     -0.02       9.98
+  data required time                                                 9.98
+  --------------------------------------------------------------------------
+  data required time                                                 9.98
+  data arrival time                                                 -2.07
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.91
+
+
+  Startpoint: r_en (input port clocked by r_clk)
+  Endpoint: READ1/r_addr_reg[1]
+            (rising edge-triggered flip-flop clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  r_en (in)                                               0.00       2.00 r
+  U300/ZN (IND3D1BWP12T30P140)                            0.02       2.02 f
+  U301/ZN (NR2D0BWP12T30P140)                             0.03       2.05 r
+  U302/ZN (AOI21D0BWP12T30P140)                           0.02       2.07 f
+  READ1/r_addr_reg[1]/D (DFCNQD1BWP12T30P140)             0.00       2.07 f
+  data arrival time                                                  2.07
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  READ1/r_addr_reg[1]/CP (DFCNQD1BWP12T30P140)            0.00      10.00 r
+  library setup time                                     -0.01       9.99
+  data required time                                                 9.99
+  --------------------------------------------------------------------------
+  data required time                                                 9.99
+  data arrival time                                                 -2.07
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.92
+
+
+  Startpoint: r_en (input port clocked by r_clk)
+  Endpoint: READ1/r_addr_reg[0]
+            (rising edge-triggered flip-flop clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  r_en (in)                                               0.00       2.00 r
+  U303/ZN (INR2D1BWP12T30P140)                            0.01       2.01 r
+  U304/ZN (OAI21D0BWP12T30P140)                           0.01       2.03 f
+  U305/ZN (INVD0BWP12T30P140)                             0.01       2.04 r
+  READ1/r_addr_reg[0]/D (DFCNQD1BWP12T30P140)             0.00       2.04 r
+  data arrival time                                                  2.04
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  READ1/r_addr_reg[0]/CP (DFCNQD1BWP12T30P140)            0.00      10.00 r
+  library setup time                                     -0.02       9.98
+  data required time                                                 9.98
+  --------------------------------------------------------------------------
+  data required time                                                 9.98
+  data arrival time                                                 -2.04
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.94
+
+
+  Startpoint: RAM1/r_data_reg[7]
+              (rising edge-triggered flip-flop clocked by r_clk)
+  Endpoint: r_data[7] (output port clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  RAM1/r_data_reg[7]/CP (DFQD1BWP12T30P140)               0.00       0.00 r
+  RAM1/r_data_reg[7]/Q (DFQD1BWP12T30P140)                0.04       0.04 f
+  r_data[7] (out)                                         0.00       0.04 f
+  data arrival time                                                  0.04
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  output external delay                                  -2.00       8.00
+  data required time                                                 8.00
+  --------------------------------------------------------------------------
+  data required time                                                 8.00
+  data arrival time                                                 -0.04
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.96
+
+
+  Startpoint: RAM1/r_data_reg[6]
+              (rising edge-triggered flip-flop clocked by r_clk)
+  Endpoint: r_data[6] (output port clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  RAM1/r_data_reg[6]/CP (DFQD1BWP12T30P140)               0.00       0.00 r
+  RAM1/r_data_reg[6]/Q (DFQD1BWP12T30P140)                0.04       0.04 f
+  r_data[6] (out)                                         0.00       0.04 f
+  data arrival time                                                  0.04
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  output external delay                                  -2.00       8.00
+  data required time                                                 8.00
+  --------------------------------------------------------------------------
+  data required time                                                 8.00
+  data arrival time                                                 -0.04
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.96
+
+
+  Startpoint: RAM1/r_data_reg[5]
+              (rising edge-triggered flip-flop clocked by r_clk)
+  Endpoint: r_data[5] (output port clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  RAM1/r_data_reg[5]/CP (DFQD1BWP12T30P140)               0.00       0.00 r
+  RAM1/r_data_reg[5]/Q (DFQD1BWP12T30P140)                0.04       0.04 f
+  r_data[5] (out)                                         0.00       0.04 f
+  data arrival time                                                  0.04
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  output external delay                                  -2.00       8.00
+  data required time                                                 8.00
+  --------------------------------------------------------------------------
+  data required time                                                 8.00
+  data arrival time                                                 -0.04
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.96
+
+
+  Startpoint: RAM1/r_data_reg[4]
+              (rising edge-triggered flip-flop clocked by r_clk)
+  Endpoint: r_data[4] (output port clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  RAM1/r_data_reg[4]/CP (DFQD1BWP12T30P140)               0.00       0.00 r
+  RAM1/r_data_reg[4]/Q (DFQD1BWP12T30P140)                0.04       0.04 f
+  r_data[4] (out)                                         0.00       0.04 f
+  data arrival time                                                  0.04
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  output external delay                                  -2.00       8.00
+  data required time                                                 8.00
+  --------------------------------------------------------------------------
+  data required time                                                 8.00
+  data arrival time                                                 -0.04
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.96
+
+
+  Startpoint: RAM1/r_data_reg[3]
+              (rising edge-triggered flip-flop clocked by r_clk)
+  Endpoint: r_data[3] (output port clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  RAM1/r_data_reg[3]/CP (DFQD1BWP12T30P140)               0.00       0.00 r
+  RAM1/r_data_reg[3]/Q (DFQD1BWP12T30P140)                0.04       0.04 f
+  r_data[3] (out)                                         0.00       0.04 f
+  data arrival time                                                  0.04
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  output external delay                                  -2.00       8.00
+  data required time                                                 8.00
+  --------------------------------------------------------------------------
+  data required time                                                 8.00
+  data arrival time                                                 -0.04
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.96
+
+
+  Startpoint: RAM1/r_data_reg[2]
+              (rising edge-triggered flip-flop clocked by r_clk)
+  Endpoint: r_data[2] (output port clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  RAM1/r_data_reg[2]/CP (DFQD1BWP12T30P140)               0.00       0.00 r
+  RAM1/r_data_reg[2]/Q (DFQD1BWP12T30P140)                0.04       0.04 f
+  r_data[2] (out)                                         0.00       0.04 f
+  data arrival time                                                  0.04
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  output external delay                                  -2.00       8.00
+  data required time                                                 8.00
+  --------------------------------------------------------------------------
+  data required time                                                 8.00
+  data arrival time                                                 -0.04
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.96
+
+
+  Startpoint: RAM1/r_data_reg[1]
+              (rising edge-triggered flip-flop clocked by r_clk)
+  Endpoint: r_data[1] (output port clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  RAM1/r_data_reg[1]/CP (DFQD1BWP12T30P140)               0.00       0.00 r
+  RAM1/r_data_reg[1]/Q (DFQD1BWP12T30P140)                0.04       0.04 f
+  r_data[1] (out)                                         0.00       0.04 f
+  data arrival time                                                  0.04
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  output external delay                                  -2.00       8.00
+  data required time                                                 8.00
+  --------------------------------------------------------------------------
+  data required time                                                 8.00
+  data arrival time                                                 -0.04
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.96
+
+
+  Startpoint: RAM1/r_data_reg[0]
+              (rising edge-triggered flip-flop clocked by r_clk)
+  Endpoint: r_data[0] (output port clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  RAM1/r_data_reg[0]/CP (DFQD1BWP12T30P140)               0.00       0.00 r
+  RAM1/r_data_reg[0]/Q (DFQD1BWP12T30P140)                0.04       0.04 f
+  r_data[0] (out)                                         0.00       0.04 f
+  data arrival time                                                  0.04
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  output external delay                                  -2.00       8.00
+  data required time                                                 8.00
+  --------------------------------------------------------------------------
+  data required time                                                 8.00
+  data arrival time                                                 -0.04
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.96
+
+
+  Startpoint: READ1/EMPTY_reg
+              (rising edge-triggered flip-flop clocked by r_clk)
+  Endpoint: EMPTY (output port clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  READ1/EMPTY_reg/CP (DFSNQD1BWP12T30P140)                0.00       0.00 r
+  READ1/EMPTY_reg/Q (DFSNQD1BWP12T30P140)                 0.04       0.04 f
+  EMPTY (out)                                             0.00       0.04 f
+  data arrival time                                                  0.04
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  output external delay                                  -2.00       8.00
+  data required time                                                 8.00
+  --------------------------------------------------------------------------
+  data required time                                                 8.00
+  data arrival time                                                 -0.04
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.96
+
+
+  Startpoint: r_en (input port clocked by r_clk)
+  Endpoint: RAM1/clk_gate_r_data_reg/latch
+            (gating element for clock r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  r_en (in)                                               0.00       2.00 r
+  RAM1/clk_gate_r_data_reg/EN (SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8)
+                                                          0.00       2.00 r
+  RAM1/clk_gate_r_data_reg/latch/E (CKLNQD1BWP12T30P140)
+                                                          0.00       2.00 r
+  data arrival time                                                  2.00
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  RAM1/clk_gate_r_data_reg/latch/CP (CKLNQD1BWP12T30P140)
+                                                          0.00      10.00 r
+  clock gating setup time                                -0.02       9.98
+  data required time                                                 9.98
+  --------------------------------------------------------------------------
+  data required time                                                 9.98
+  data arrival time                                                 -2.00
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.98
+
+
+  Startpoint: READ1/r_addr_reg[1]
+              (rising edge-triggered flip-flop clocked by r_clk)
+  Endpoint: RAM1/r_data_reg[1]
+            (rising edge-triggered flip-flop clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  READ1/r_addr_reg[1]/CP (DFCNQD1BWP12T30P140)            0.00       0.00 r
+  READ1/r_addr_reg[1]/Q (DFCNQD1BWP12T30P140)             0.04       0.04 r
+  U246/ZN (INVD0BWP12T30P140)                             0.01       0.05 f
+  U251/ZN (NR2D0BWP12T30P140)                             0.07       0.12 r
+  U297/ZN (AOI22D1BWP12T30P140)                           0.03       0.15 f
+  U298/Z (CKAN2D0BWP12T30P140)                            0.02       0.17 f
+  U299/ZN (AOI32D0BWP12T30P140)                           0.02       0.19 r
+  RAM1/r_data_reg[1]/D (DFQD1BWP12T30P140)                0.00       0.19 r
+  data arrival time                                                  0.19
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  RAM1/r_data_reg[1]/CP (DFQD1BWP12T30P140)               0.00      10.00 r
+  library setup time                                     -0.01       9.99
+  data required time                                                 9.99
+  --------------------------------------------------------------------------
+  data required time                                                 9.99
+  data arrival time                                                 -0.19
+  --------------------------------------------------------------------------
+  slack (MET)                                                        9.80
+
+
+  Startpoint: READ1/r_addr_reg[1]
+              (rising edge-triggered flip-flop clocked by r_clk)
+  Endpoint: RAM1/r_data_reg[0]
+            (rising edge-triggered flip-flop clocked by r_clk)
+  Path Group: r_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_8
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock r_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  READ1/r_addr_reg[1]/CP (DFCNQD1BWP12T30P140)            0.00       0.00 r
+  READ1/r_addr_reg[1]/Q (DFCNQD1BWP12T30P140)             0.04       0.04 r
+  U246/ZN (INVD0BWP12T30P140)                             0.01       0.05 f
+  U251/ZN (NR2D0BWP12T30P140)                             0.07       0.12 r
+  U285/ZN (AOI22D1BWP12T30P140)                           0.03       0.15 f
+  U286/Z (CKAN2D0BWP12T30P140)                            0.02       0.17 f
+  U287/ZN (AOI32D0BWP12T30P140)                           0.02       0.19 r
+  RAM1/r_data_reg[0]/D (DFQD1BWP12T30P140)                0.00       0.19 r
+  data arrival time                                                  0.19
+
+  clock r_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  RAM1/r_data_reg[0]/CP (DFQD1BWP12T30P140)               0.00      10.00 r
+  library setup time                                     -0.01       9.99
+  data required time                                                 9.99
+  --------------------------------------------------------------------------
+  data required time                                                 9.99
+  data arrival time                                                 -0.19
+  --------------------------------------------------------------------------
+  slack (MET)                                                        9.80
+
+
+  Startpoint: w_en (input port clocked by w_clk)
+  Endpoint: WRITE1/FULL_reg
+            (rising edge-triggered flip-flop clocked by w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_en (in)                                               0.00       2.00 r
+  U308/ZN (ND2D0BWP12T30P140)                             0.03       2.03 f
+  U311/ZN (NR3D0BWP12T30P140)                             0.03       2.06 r
+  U333/ZN (ND2D0BWP12T30P140)                             0.02       2.08 f
+  U334/ZN (MUX2ND0BWP12T30P140)                           0.03       2.10 r
+  U335/ZN (MAOI22D1BWP12T30P140)                          0.03       2.13 r
+  U336/ZN (OAI22D1BWP12T30P140)                           0.02       2.15 f
+  U337/ZN (AOI221D1BWP12T30P140)                          0.02       2.17 r
+  U340/Z (CKAN2D0BWP12T30P140)                            0.02       2.19 r
+  WRITE1/FULL_reg/D (DFCNQD1BWP12T30P140)                 0.00       2.19 r
+  data arrival time                                                  2.19
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  WRITE1/FULL_reg/CP (DFCNQD1BWP12T30P140)                0.00      10.00 r
+  library setup time                                     -0.01       9.99
+  data required time                                                 9.99
+  --------------------------------------------------------------------------
+  data required time                                                 9.99
+  data arrival time                                                 -2.19
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.80
+
+
+  Startpoint: w_en (input port clocked by w_clk)
+  Endpoint: WRITE1/w_addr_grey_reg[2]
+            (rising edge-triggered flip-flop clocked by w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_en (in)                                               0.00       2.00 r
+  U308/ZN (ND2D0BWP12T30P140)                             0.03       2.03 f
+  U311/ZN (NR3D0BWP12T30P140)                             0.03       2.06 r
+  U333/ZN (ND2D0BWP12T30P140)                             0.02       2.08 f
+  U334/ZN (MUX2ND0BWP12T30P140)                           0.03       2.10 r
+  U335/ZN (MAOI22D1BWP12T30P140)                          0.03       2.13 r
+  WRITE1/w_addr_grey_reg[2]/D (DFCNQD1BWP12T30P140)       0.00       2.13 r
+  data arrival time                                                  2.13
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  WRITE1/w_addr_grey_reg[2]/CP (DFCNQD1BWP12T30P140)      0.00      10.00 r
+  library setup time                                     -0.02       9.98
+  data required time                                                 9.98
+  --------------------------------------------------------------------------
+  data required time                                                 9.98
+  data arrival time                                                 -2.13
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.86
+
+
+  Startpoint: w_en (input port clocked by w_clk)
+  Endpoint: WRITE1/w_addr_grey_reg[0]
+            (rising edge-triggered flip-flop clocked by w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_en (in)                                               0.00       2.00 r
+  U308/ZN (ND2D0BWP12T30P140)                             0.03       2.03 f
+  U311/ZN (NR3D0BWP12T30P140)                             0.03       2.06 r
+  U312/ZN (AOI21D0BWP12T30P140)                           0.02       2.08 f
+  U314/ZN (INVD0BWP12T30P140)                             0.02       2.09 r
+  U322/ZN (MUX2ND0BWP12T30P140)                           0.02       2.12 f
+  U323/ZN (INVD0BWP12T30P140)                             0.01       2.13 r
+  WRITE1/w_addr_grey_reg[0]/D (DFCNQD1BWP12T30P140)       0.00       2.13 r
+  data arrival time                                                  2.13
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  WRITE1/w_addr_grey_reg[0]/CP (DFCNQD1BWP12T30P140)      0.00      10.00 r
+  library setup time                                     -0.01       9.99
+  data required time                                                 9.99
+  --------------------------------------------------------------------------
+  data required time                                                 9.99
+  data arrival time                                                 -2.13
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.86
+
+
+  Startpoint: w_en (input port clocked by w_clk)
+  Endpoint: WRITE1/w_addr_grey_reg[1]
+            (rising edge-triggered flip-flop clocked by w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_en (in)                                               0.00       2.00 r
+  U308/ZN (ND2D0BWP12T30P140)                             0.03       2.03 f
+  U311/ZN (NR3D0BWP12T30P140)                             0.03       2.06 r
+  U312/ZN (AOI21D0BWP12T30P140)                           0.02       2.08 f
+  U314/ZN (INVD0BWP12T30P140)                             0.02       2.09 r
+  U316/ZN (OAI22D1BWP12T30P140)                           0.02       2.11 f
+  U317/ZN (INVD0BWP12T30P140)                             0.01       2.12 r
+  WRITE1/w_addr_grey_reg[1]/D (DFCNQD1BWP12T30P140)       0.00       2.12 r
+  data arrival time                                                  2.12
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  WRITE1/w_addr_grey_reg[1]/CP (DFCNQD1BWP12T30P140)      0.00      10.00 r
+  library setup time                                     -0.01       9.99
+  data required time                                                 9.99
+  --------------------------------------------------------------------------
+  data required time                                                 9.99
+  data arrival time                                                 -2.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.86
+
+
+  Startpoint: w_en (input port clocked by w_clk)
+  Endpoint: WRITE1/w_addr_grey_reg[3]
+            (rising edge-triggered flip-flop clocked by w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_en (in)                                               0.00       2.00 r
+  U308/ZN (ND2D0BWP12T30P140)                             0.03       2.03 f
+  U311/ZN (NR3D0BWP12T30P140)                             0.03       2.06 r
+  U333/ZN (ND2D0BWP12T30P140)                             0.02       2.08 f
+  U334/ZN (MUX2ND0BWP12T30P140)                           0.03       2.10 r
+  WRITE1/w_addr_grey_reg[3]/D (DFCNQD1BWP12T30P140)       0.00       2.10 r
+  data arrival time                                                  2.10
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  WRITE1/w_addr_grey_reg[3]/CP (DFCNQD1BWP12T30P140)      0.00      10.00 r
+  library setup time                                     -0.02       9.98
+  data required time                                                 9.98
+  --------------------------------------------------------------------------
+  data required time                                                 9.98
+  data arrival time                                                 -2.10
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.88
+
+
+  Startpoint: w_en (input port clocked by w_clk)
+  Endpoint: WRITE1/w_addr_reg[2]
+            (rising edge-triggered flip-flop clocked by w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_en (in)                                               0.00       2.00 r
+  U308/ZN (ND2D0BWP12T30P140)                             0.03       2.03 f
+  U311/ZN (NR3D0BWP12T30P140)                             0.03       2.06 r
+  U313/ZN (MAOI22D1BWP12T30P140)                          0.03       2.09 r
+  WRITE1/w_addr_reg[2]/D (DFCNQD1BWP12T30P140)            0.00       2.09 r
+  data arrival time                                                  2.09
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  WRITE1/w_addr_reg[2]/CP (DFCNQD1BWP12T30P140)           0.00      10.00 r
+  library setup time                                     -0.02       9.98
+  data required time                                                 9.98
+  --------------------------------------------------------------------------
+  data required time                                                 9.98
+  data arrival time                                                 -2.09
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.89
+
+
+  Startpoint: w_en (input port clocked by w_clk)
+  Endpoint: WRITE1/w_addr_reg[1]
+            (rising edge-triggered flip-flop clocked by w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_en (in)                                               0.00       2.00 r
+  U308/ZN (ND2D0BWP12T30P140)                             0.03       2.03 f
+  U309/Z (OR2D1BWP12T30P140)                              0.02       2.05 f
+  U312/ZN (AOI21D0BWP12T30P140)                           0.02       2.07 r
+  WRITE1/w_addr_reg[1]/D (DFCNQD1BWP12T30P140)            0.00       2.07 r
+  data arrival time                                                  2.07
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  WRITE1/w_addr_reg[1]/CP (DFCNQD1BWP12T30P140)           0.00      10.00 r
+  library setup time                                     -0.02       9.98
+  data required time                                                 9.98
+  --------------------------------------------------------------------------
+  data required time                                                 9.98
+  data arrival time                                                 -2.07
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.91
+
+
+  Startpoint: w_en (input port clocked by w_clk)
+  Endpoint: RAM1/clk_gate_ram_mem_reg[3]/latch
+            (gating element for clock w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_3
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_en (in)                                               0.00       2.00 r
+  U308/ZN (ND2D0BWP12T30P140)                             0.03       2.03 f
+  U351/ZN (NR3D0BWP12T30P140)                             0.02       2.05 r
+  RAM1/clk_gate_ram_mem_reg[3]/EN (SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_3)
+                                                          0.00       2.05 r
+  RAM1/clk_gate_ram_mem_reg[3]/latch/E (CKLNQD1BWP12T30P140)
+                                                          0.00       2.05 r
+  data arrival time                                                  2.05
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  RAM1/clk_gate_ram_mem_reg[3]/latch/CP (CKLNQD1BWP12T30P140)
+                                                          0.00      10.00 r
+  clock gating setup time                                -0.03       9.97
+  data required time                                                 9.97
+  --------------------------------------------------------------------------
+  data required time                                                 9.97
+  data arrival time                                                 -2.05
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.92
+
+
+  Startpoint: w_en (input port clocked by w_clk)
+  Endpoint: RAM1/clk_gate_ram_mem_reg[1]/latch
+            (gating element for clock w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_1
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_en (in)                                               0.00       2.00 r
+  U308/ZN (ND2D0BWP12T30P140)                             0.03       2.03 f
+  U353/ZN (NR3D0BWP12T30P140)                             0.02       2.05 r
+  RAM1/clk_gate_ram_mem_reg[1]/EN (SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_1)
+                                                          0.00       2.05 r
+  RAM1/clk_gate_ram_mem_reg[1]/latch/E (CKLNQD1BWP12T30P140)
+                                                          0.00       2.05 r
+  data arrival time                                                  2.05
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  RAM1/clk_gate_ram_mem_reg[1]/latch/CP (CKLNQD1BWP12T30P140)
+                                                          0.00      10.00 r
+  clock gating setup time                                -0.03       9.97
+  data required time                                                 9.97
+  --------------------------------------------------------------------------
+  data required time                                                 9.97
+  data arrival time                                                 -2.05
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.92
+
+
+  Startpoint: w_en (input port clocked by w_clk)
+  Endpoint: RAM1/clk_gate_ram_mem_reg[5]/latch
+            (gating element for clock w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_5
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_en (in)                                               0.00       2.00 r
+  U308/ZN (ND2D0BWP12T30P140)                             0.03       2.03 f
+  U349/ZN (NR3D0BWP12T30P140)                             0.02       2.05 r
+  RAM1/clk_gate_ram_mem_reg[5]/EN (SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_5)
+                                                          0.00       2.05 r
+  RAM1/clk_gate_ram_mem_reg[5]/latch/E (CKLNQD1BWP12T30P140)
+                                                          0.00       2.05 r
+  data arrival time                                                  2.05
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  RAM1/clk_gate_ram_mem_reg[5]/latch/CP (CKLNQD1BWP12T30P140)
+                                                          0.00      10.00 r
+  clock gating setup time                                -0.03       9.97
+  data required time                                                 9.97
+  --------------------------------------------------------------------------
+  data required time                                                 9.97
+  data arrival time                                                 -2.05
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.92
+
+
+  Startpoint: w_en (input port clocked by w_clk)
+  Endpoint: RAM1/clk_gate_ram_mem_reg[7]/latch
+            (gating element for clock w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_7
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_en (in)                                               0.00       2.00 r
+  U308/ZN (ND2D0BWP12T30P140)                             0.03       2.03 f
+  U347/ZN (NR3D0BWP12T30P140)                             0.02       2.05 r
+  RAM1/clk_gate_ram_mem_reg[7]/EN (SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_7)
+                                                          0.00       2.05 r
+  RAM1/clk_gate_ram_mem_reg[7]/latch/E (CKLNQD1BWP12T30P140)
+                                                          0.00       2.05 r
+  data arrival time                                                  2.05
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  RAM1/clk_gate_ram_mem_reg[7]/latch/CP (CKLNQD1BWP12T30P140)
+                                                          0.00      10.00 r
+  clock gating setup time                                -0.03       9.97
+  data required time                                                 9.97
+  --------------------------------------------------------------------------
+  data required time                                                 9.97
+  data arrival time                                                 -2.05
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.93
+
+
+  Startpoint: w_en (input port clocked by w_clk)
+  Endpoint: RAM1/clk_gate_ram_mem_reg[2]/latch
+            (gating element for clock w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_2
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_en (in)                                               0.00       2.00 r
+  U318/ZN (INVD0BWP12T30P140)                             0.01       2.01 f
+  U319/Z (OR2D1BWP12T30P140)                              0.02       2.03 f
+  U352/ZN (NR3D0BWP12T30P140)                             0.02       2.04 r
+  RAM1/clk_gate_ram_mem_reg[2]/EN (SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_2)
+                                                          0.00       2.04 r
+  RAM1/clk_gate_ram_mem_reg[2]/latch/E (CKLNQD1BWP12T30P140)
+                                                          0.00       2.04 r
+  data arrival time                                                  2.04
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  RAM1/clk_gate_ram_mem_reg[2]/latch/CP (CKLNQD1BWP12T30P140)
+                                                          0.00      10.00 r
+  clock gating setup time                                -0.03       9.97
+  data required time                                                 9.97
+  --------------------------------------------------------------------------
+  data required time                                                 9.97
+  data arrival time                                                 -2.04
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.93
+
+
+  Startpoint: w_en (input port clocked by w_clk)
+  Endpoint: RAM1/clk_gate_ram_mem_reg[0]/latch
+            (gating element for clock w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_0
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_en (in)                                               0.00       2.00 r
+  U318/ZN (INVD0BWP12T30P140)                             0.01       2.01 f
+  U319/Z (OR2D1BWP12T30P140)                              0.02       2.03 f
+  U354/ZN (NR3D0BWP12T30P140)                             0.02       2.04 r
+  RAM1/clk_gate_ram_mem_reg[0]/EN (SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_0)
+                                                          0.00       2.04 r
+  RAM1/clk_gate_ram_mem_reg[0]/latch/E (CKLNQD1BWP12T30P140)
+                                                          0.00       2.04 r
+  data arrival time                                                  2.04
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  RAM1/clk_gate_ram_mem_reg[0]/latch/CP (CKLNQD1BWP12T30P140)
+                                                          0.00      10.00 r
+  clock gating setup time                                -0.03       9.97
+  data required time                                                 9.97
+  --------------------------------------------------------------------------
+  data required time                                                 9.97
+  data arrival time                                                 -2.04
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.93
+
+
+  Startpoint: w_en (input port clocked by w_clk)
+  Endpoint: RAM1/clk_gate_ram_mem_reg[4]/latch
+            (gating element for clock w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_4
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_en (in)                                               0.00       2.00 r
+  U318/ZN (INVD0BWP12T30P140)                             0.01       2.01 f
+  U319/Z (OR2D1BWP12T30P140)                              0.02       2.03 f
+  U350/ZN (NR3D0BWP12T30P140)                             0.01       2.04 r
+  RAM1/clk_gate_ram_mem_reg[4]/EN (SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_4)
+                                                          0.00       2.04 r
+  RAM1/clk_gate_ram_mem_reg[4]/latch/E (CKLNQD1BWP12T30P140)
+                                                          0.00       2.04 r
+  data arrival time                                                  2.04
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  RAM1/clk_gate_ram_mem_reg[4]/latch/CP (CKLNQD1BWP12T30P140)
+                                                          0.00      10.00 r
+  clock gating setup time                                -0.03       9.97
+  data required time                                                 9.97
+  --------------------------------------------------------------------------
+  data required time                                                 9.97
+  data arrival time                                                 -2.04
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.93
+
+
+  Startpoint: w_en (input port clocked by w_clk)
+  Endpoint: RAM1/clk_gate_ram_mem_reg[6]/latch
+            (gating element for clock w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_6
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_en (in)                                               0.00       2.00 r
+  U318/ZN (INVD0BWP12T30P140)                             0.01       2.01 f
+  U319/Z (OR2D1BWP12T30P140)                              0.02       2.03 f
+  U348/ZN (NR3D0BWP12T30P140)                             0.01       2.04 r
+  RAM1/clk_gate_ram_mem_reg[6]/EN (SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_6)
+                                                          0.00       2.04 r
+  RAM1/clk_gate_ram_mem_reg[6]/latch/E (CKLNQD1BWP12T30P140)
+                                                          0.00       2.04 r
+  data arrival time                                                  2.04
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  RAM1/clk_gate_ram_mem_reg[6]/latch/CP (CKLNQD1BWP12T30P140)
+                                                          0.00      10.00 r
+  clock gating setup time                                -0.03       9.97
+  data required time                                                 9.97
+  --------------------------------------------------------------------------
+  data required time                                                 9.97
+  data arrival time                                                 -2.04
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.93
+
+
+  Startpoint: w_en (input port clocked by w_clk)
+  Endpoint: WRITE1/w_addr_reg[0]
+            (rising edge-triggered flip-flop clocked by w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_en (in)                                               0.00       2.00 r
+  U318/ZN (INVD0BWP12T30P140)                             0.01       2.01 f
+  U319/Z (OR2D1BWP12T30P140)                              0.02       2.03 f
+  U321/ZN (OAI21D0BWP12T30P140)                           0.02       2.05 r
+  WRITE1/w_addr_reg[0]/D (DFCNQD1BWP12T30P140)            0.00       2.05 r
+  data arrival time                                                  2.05
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  WRITE1/w_addr_reg[0]/CP (DFCNQD1BWP12T30P140)           0.00      10.00 r
+  library setup time                                     -0.02       9.98
+  data required time                                                 9.98
+  --------------------------------------------------------------------------
+  data required time                                                 9.98
+  data arrival time                                                 -2.05
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.93
+
+
+  Startpoint: WRITE1/FULL_reg
+              (rising edge-triggered flip-flop clocked by w_clk)
+  Endpoint: FULL (output port clocked by w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_0
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_1
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_2
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_3
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_4
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_5
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_6
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+  SNPS_CLOCK_GATE_HIGH_fifo_mem_DATA_WIDTH8_ADDR_WIDTH3_7
+                     ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  WRITE1/FULL_reg/CP (DFCNQD1BWP12T30P140)                0.00       0.00 r
+  WRITE1/FULL_reg/Q (DFCNQD1BWP12T30P140)                 0.04       0.04 f
+  FULL (out)                                              0.00       0.04 f
+  data arrival time                                                  0.04
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  output external delay                                  -2.00       8.00
+  data required time                                                 8.00
+  --------------------------------------------------------------------------
+  data required time                                                 8.00
+  data arrival time                                                 -0.04
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.96
+
+
+  Startpoint: w_data[2] (input port clocked by w_clk)
+  Endpoint: RAM1/ram_mem_reg[0][2]
+            (rising edge-triggered flip-flop clocked by w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_data[2] (in)                                          0.00       2.00 r
+  RAM1/ram_mem_reg[0][2]/D (DFQD1BWP12T30P140)            0.00       2.00 r
+  data arrival time                                                  2.00
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  RAM1/ram_mem_reg[0][2]/CP (DFQD1BWP12T30P140)           0.00      10.00 r
+  library setup time                                     -0.01       9.99
+  data required time                                                 9.99
+  --------------------------------------------------------------------------
+  data required time                                                 9.99
+  data arrival time                                                 -2.00
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.99
+
+
+  Startpoint: w_data[1] (input port clocked by w_clk)
+  Endpoint: RAM1/ram_mem_reg[0][1]
+            (rising edge-triggered flip-flop clocked by w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_data[1] (in)                                          0.00       2.00 r
+  RAM1/ram_mem_reg[0][1]/D (DFQD1BWP12T30P140)            0.00       2.00 r
+  data arrival time                                                  2.00
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  RAM1/ram_mem_reg[0][1]/CP (DFQD1BWP12T30P140)           0.00      10.00 r
+  library setup time                                     -0.01       9.99
+  data required time                                                 9.99
+  --------------------------------------------------------------------------
+  data required time                                                 9.99
+  data arrival time                                                 -2.00
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.99
+
+
+  Startpoint: w_data[0] (input port clocked by w_clk)
+  Endpoint: RAM1/ram_mem_reg[0][0]
+            (rising edge-triggered flip-flop clocked by w_clk)
+  Path Group: w_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  asy_fifo_top       ZeroWireload          tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock w_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 r
+  w_data[0] (in)                                          0.00       2.00 r
+  RAM1/ram_mem_reg[0][0]/D (DFQD1BWP12T30P140)            0.00       2.00 r
+  data arrival time                                                  2.00
+
+  clock w_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  RAM1/ram_mem_reg[0][0]/CP (DFQD1BWP12T30P140)           0.00      10.00 r
+  library setup time                                     -0.01       9.99
+  data required time                                                 9.99
+  --------------------------------------------------------------------------
+  data required time                                                 9.99
+  data arrival time                                                 -2.00
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.99
+
+
+1

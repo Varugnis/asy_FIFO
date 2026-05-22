@@ -1,0 +1,21 @@
+ 
+****************************************
+check_design summary:
+Version:     L-2016.03-SP1
+Date:        Wed May 20 15:10:44 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                               2
+    Cells do not drive (LINT-1)                                     2
+
+Nets                                                                2
+    Unloaded nets (LINT-2)                                          2
+--------------------------------------------------------------------------------
+
+Warning: In design 'fifo_wr_ctrl_DATA_WIDTH8_ADDR_WIDTH3', cell 'B_0' does not drive any nets. (LINT-1)
+Warning: In design 'fifo_rd_ctrl_DATA_WIDTH8_ADDR_WIDTH3', cell 'B_0' does not drive any nets. (LINT-1)
+Warning: In design 'asy_fifo_top', net 'w_addr_ori[3]' driven by pin 'WRITE1/w_addr[3]' has no loads. (LINT-2)
+Warning: In design 'asy_fifo_top', net 'r_addr_ori[3]' driven by pin 'READ1/r_addr[3]' has no loads. (LINT-2)
+1
