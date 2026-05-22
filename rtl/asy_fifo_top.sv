@@ -23,6 +23,8 @@ wire [ADDR_WIDTH:0] w_addr_ori;
 wire [ADDR_WIDTH:0] r_addr_grey;
 wire [ADDR_WIDTH:0] w_addr_grey;
 
+wire w_en_safe = w_en & ~FULL;
+wire r_en_safe = r_en & ~EMPTY;
 
 fifo_mem #(
     .DATA_WIDTH(DATA_WIDTH),
@@ -30,8 +32,8 @@ fifo_mem #(
 ) RAM1(
     .r_clk(r_clk),
     .w_clk(w_clk),
-    .w_en(w_en),
-    .r_en(r_en),
+    .w_en(w_en_safe),
+    .r_en(r_en_safe),
     .w_data(w_data),
     .r_addr(r_addr_ori[ADDR_WIDTH-1:0]),
     .w_addr(w_addr_ori[ADDR_WIDTH-1:0]),

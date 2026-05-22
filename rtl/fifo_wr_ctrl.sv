@@ -14,14 +14,22 @@ module fifo_wr_ctrl #(
     output reg [ADDR_WIDTH:0] w_addr_grey   //Extra bit for gray code to compare
 );
 
-wire [ADDR_WIDTH:0] w_addr_next;
-wire [ADDR_WIDTH:0] w_grey_next;
-
-assign w_addr_next = w_addr + (w_en & ~FULL);
-assign w_grey_next = w_addr_next ^ (w_addr_next >> 1);
-
 reg [ADDR_WIDTH:0] r_addr_grey_d1;
 reg [ADDR_WIDTH:0] r_addr_grey_d2;
+
+function automatic [ADDR_WIDTH:0] grey2bin(input [ADDR_WIDTH:0] grey);
+    integer i;
+    begin
+        grey2bin[ADDR_WIDTH] = grey[ADDR_WIDTH];
+        for (i = ADDR_WIDTH - 1; i >= 0; i = i - 1)
+            grey2bin[i] = grey2bin[i + 1] ^ grey[i];
+    end
+endfunction
+
+wire [ADDR_WIDTH:0] r_addr_bin = grey2bin(r_addr_grey_d2);
+wire full_comb = (w_addr == {~r_addr_bin[ADDR_WIDTH], r_addr_bin[ADDR_WIDTH-1:0]});
+wire [ADDR_WIDTH:0] w_addr_next = w_addr + (w_en & ~full_comb);
+wire [ADDR_WIDTH:0] w_grey_next = w_addr_next ^ (w_addr_next >> 1);
 
 always @(posedge w_clk or negedge w_rst) begin
     if (!w_rst) begin
@@ -47,13 +55,10 @@ end
 
 always @(posedge w_clk or negedge w_rst) begin
     if (!w_rst) begin
-        FULL<=1'b0;
-    end
-    else if ({ ~w_grey_next[ADDR_WIDTH:ADDR_WIDTH-1], w_grey_next[ADDR_WIDTH-2:0]}==r_addr_grey_d2[ADDR_WIDTH:0]) begin
-        FULL<=1'b1;
+        FULL <= 1'b0;
     end
     else begin
-        FULL<=1'b0;
+        FULL <= full_comb;
     end
 end
 

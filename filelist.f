@@ -7,7 +7,7 @@
 ./rtl/fifo_mem.sv
 ./rtl/fifo_rd_ctrl.sv
 ./rtl/fifo_wr_ctrl.sv
-./rtl/asy_fifo_top.s
+./rtl/asy_fifo_top.sv
 
 // 测试文件
 ./tb/tb_asy_fifo.sv
