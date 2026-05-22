@@ -5,6 +5,7 @@ module tb_asy_fifo;
     parameter DATA_WIDTH = 8;
     parameter ADDR_WIDTH = 3;
     localparam DEPTH = 1 << ADDR_WIDTH;
+    localparam SYNC_CYCLES = 5;
 
     reg  w_clk, r_clk;
     reg  w_rst, r_rst;
@@ -35,25 +36,17 @@ module tb_asy_fifo;
         .r_data (r_data)
     );
 
-    // 写时钟 100MHz
     initial begin
         w_clk = 0;
         forever #5 w_clk = ~w_clk;
     end
 
-    // 读时钟 ~38.5MHz（与写时钟异步）
     initial begin
         r_clk = 0;
         forever #13 r_clk = ~r_clk;
     end
 
-    // 成功写入时入队；成功读出时出队比对
-    always @(posedge w_clk) begin
-        if (w_rst && w_en && !FULL) begin
-            exp_q.push_back(w_data);
-        end
-    end
-
+    // 读成功时比对（在 r_clk 域采样 r_data）
     always @(posedge r_clk) begin
         if (r_rst && r_en && !EMPTY) begin
             #1step;
@@ -71,6 +64,19 @@ module tb_asy_fifo;
         end
     end
 
+    // 格雷指针跨域同步需要若干拍，判 FULL/EMPTY 前等待
+    task automatic wait_sync;
+        repeat (SYNC_CYCLES) @(posedge w_clk);
+        repeat (SYNC_CYCLES) @(posedge r_clk);
+    endtask
+
+    task automatic report_err(input string msg);
+        begin
+            $error("[%0t] TEST%0d: %s", $time, test_id, msg);
+            err_cnt++;
+        end
+    endtask
+
     task automatic reset_fifo;
         begin
             w_rst = 0;
@@ -83,87 +89,134 @@ module tb_asy_fifo;
             w_rst = 1;
             r_rst = 1;
             #30;
-            if (!EMPTY)
+            wait_sync();
+            if (EMPTY !== 1'b1)
                 report_err("after reset EMPTY should be 1");
         end
     endtask
 
-    task automatic report_err(input string msg);
+    // 阻塞写一笔；满则等待，不报错
+    task automatic fifo_write(input [DATA_WIDTH-1:0] data);
         begin
-            $error("[%0t] TEST%0d: %s", $time, test_id, msg);
-            err_cnt++;
-        end
-    endtask
-
-    task automatic drive_write(input [DATA_WIDTH-1:0] data, input bit expect_ok);
-        begin
+            while (FULL) @(posedge w_clk);
             @(negedge w_clk);
-            if (expect_ok && FULL) begin
-                report_err($sformatf("write 0x%0h blocked: already FULL", data));
-            end else if (!expect_ok && !FULL) begin
-                report_err($sformatf("write 0x%0h should be blocked by FULL", data));
-            end else begin
-                w_data = data;
-                w_en   = 1;
-                @(posedge w_clk);
-                @(negedge w_clk);
-                w_en = 0;
-            end
+            w_data = data;
+            w_en   = 1;
+            @(posedge w_clk);
+            exp_q.push_back(data);
+            @(negedge w_clk);
+            w_en = 0;
         end
     endtask
 
-    task automatic drive_read(input bit expect_ok, output [DATA_WIDTH-1:0] data_out);
+    // 阻塞读一笔；空则等待
+    task automatic fifo_read(output [DATA_WIDTH-1:0] data_out);
         begin
+            while (EMPTY) @(posedge r_clk);
             @(negedge r_clk);
-            if (expect_ok && EMPTY) begin
-                report_err("read blocked: already EMPTY");
-            end else if (!expect_ok && !EMPTY) begin
-                report_err("read should be blocked by EMPTY");
-            end else begin
-                r_en = 1;
-                @(posedge w_clk);
-                #1step;
-                data_out = r_data;
-                @(negedge r_clk);
-                r_en = 0;
-            end
+            r_en = 1;
+            @(posedge r_clk);
+            #1step;
+            data_out = r_data;
+            @(negedge r_clk);
+            r_en = 0;
         end
     endtask
 
-    // TEST1: 写满 8 笔再读空，顺序 0~7
+    // 期望失败的写（已满仍拉 w_en）
+    task automatic fifo_write_expect_fail;
+        begin
+            wait_sync();
+            if (!FULL)
+                report_err("expect FULL before illegal write");
+            @(negedge w_clk);
+            w_data = 8'hFF;
+            w_en   = 1;
+            @(posedge w_clk);
+            @(negedge w_clk);
+            w_en = 0;
+            wait_sync();
+        end
+    endtask
+
+    // 期望失败的读（已空仍拉 r_en）
+    task automatic fifo_read_expect_fail;
+        begin
+            wait_sync();
+            if (!EMPTY)
+                report_err("expect EMPTY before illegal read");
+            @(negedge r_clk);
+            r_en = 1;
+            @(posedge r_clk);
+            @(negedge r_clk);
+            r_en = 0;
+            wait_sync();
+        end
+    endtask
+
+    task automatic check_full(input bit expect);
+        begin
+            wait_sync();
+            if (FULL !== expect)
+                report_err(expect ? "FIFO should be FULL" : "FIFO should not be FULL");
+        end
+    endtask
+
+    task automatic check_empty(input bit expect);
+        begin
+            wait_sync();
+            if (EMPTY !== expect)
+                report_err(expect ? "FIFO should be EMPTY" : "FIFO should not be EMPTY");
+        end
+    endtask
+
+    task automatic drain_all;
+        int guard;
+        reg [DATA_WIDTH-1:0] rd_byte;
+        begin
+            guard = 0;
+            while (guard < DEPTH * 4) begin
+                wait_sync();
+                if (EMPTY)
+                    break;
+                fifo_read(rd_byte);
+                guard = guard + 1;
+            end
+            if (!EMPTY)
+                report_err("drain_all timeout: FIFO still not empty");
+        end
+    endtask
+
+    // TEST1: 写满 8 笔再读空
     task automatic test_fill_drain;
         int i;
-        logic [DATA_WIDTH-1:0] rd_byte;
+        reg [DATA_WIDTH-1:0] rd_byte;
         begin
             test_id = 1;
             $display("[%0t] === TEST1: fill %0d entries then drain ===", $time, DEPTH);
             reset_fifo();
 
             for (i = 0; i < DEPTH; i = i + 1)
-                drive_write(i[DATA_WIDTH-1:0], 1);
+                fifo_write(i[DATA_WIDTH-1:0]);
 
-            if (!FULL)
-                report_err("FIFO should be FULL after 8 writes");
-
-            drive_write(8'hFF, 0);
+            check_full(1'b1);
+            fifo_write_expect_fail();
 
             for (i = 0; i < DEPTH; i = i + 1)
-                drive_read(1, rd_byte);
+                fifo_read(rd_byte);
 
-            if (!EMPTY)
-                report_err("FIFO should be EMPTY after 8 reads");
-
-            drive_read(0, rd_byte);
+            check_empty(1'b1);
+            fifo_read_expect_fail();
 
             if (exp_q.size() != 0)
                 report_err($sformatf("scoreboard not empty, left=%0d", exp_q.size()));
         end
     endtask
 
-    // TEST2: 边写边读（写快读慢），检查连续流水
+    // TEST2: 边写边读
     task automatic test_stream;
         int i;
-        logic [DATA_WIDTH-1:0] rd_byte;
+        reg [DATA_WIDTH-1:0] rd_byte;
         begin
             test_id = 2;
             $display("[%0t] === TEST2: concurrent write/read stream ===", $time);
@@ -171,53 +224,46 @@ module tb_asy_fifo;
 
             fork
                 begin
-                    for (i = 0; i < 24; i = i + 1) begin
-                        drive_write($urandom_range(255, 0), 1);
-                    end
+                    for (i = 0; i < 24; i = i + 1)
+                        fifo_write($urandom_range(255, 0));
                 end
                 begin
-                    repeat (24) begin
-                        while (EMPTY) @(posedge r_clk);
-                        drive_read(1, rd_byte);
-                    end
+                    for (i = 0; i < 24; i = i + 1)
+                        fifo_read(rd_byte);
                 end
             join
 
-            #200;
-            while (!EMPTY)
-                drive_read(1, rd_byte);
+            drain_all();
 
             if (exp_q.size() != 0)
                 report_err($sformatf("scoreboard leftover=%0d", exp_q.size()));
         end
     endtask
 
-    // TEST3: 先写 4 笔，读 2 笔，再写满，再读空
+    // TEST3: 部分写/读/再写满/读空
     task automatic test_partial;
         int i;
-        logic [DATA_WIDTH-1:0] rd_byte;
+        reg [DATA_WIDTH-1:0] rd_byte;
         begin
             test_id = 3;
             $display("[%0t] === TEST3: partial fill / read / refill ===", $time);
             reset_fifo();
 
             for (i = 0; i < 4; i = i + 1)
-                drive_write(8'hA0 + i, 1);
+                fifo_write(8'hA0 + i);
 
             for (i = 0; i < 2; i = i + 1)
-                drive_read(1, rd_byte);
+                fifo_read(rd_byte);
 
             for (i = 0; i < 6; i = i + 1)
-                drive_write(8'hD0 + i, 1);
+                fifo_write(8'hD0 + i);
 
-            if (!FULL)
-                report_err("FIFO should be FULL after refill");
+            check_full(1'b1);
 
             repeat (8)
-                drive_read(1, rd_byte);
+                fifo_read(rd_byte);
 
-            if (!EMPTY)
-                report_err("FIFO should be EMPTY at end of TEST3");
+            check_empty(1'b1);
         end
     endtask
 
