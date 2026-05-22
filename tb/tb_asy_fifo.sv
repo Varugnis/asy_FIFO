@@ -154,19 +154,19 @@ module tb_asy_fifo;
         end
     endtask
 
-    task automatic check_full(input bit expect);
+    task automatic check_full(input bit exp_val);
         begin
             wait_sync();
-            if (FULL !== expect)
-                report_err(expect ? "FIFO should be FULL" : "FIFO should not be FULL");
+            if (FULL !== exp_val)
+                report_err(exp_val ? "FIFO should be FULL" : "FIFO should not be FULL");
         end
     endtask
 
-    task automatic check_empty(input bit expect);
+    task automatic check_empty(input bit exp_val);
         begin
             wait_sync();
-            if (EMPTY !== expect)
-                report_err(expect ? "FIFO should be EMPTY" : "FIFO should not be EMPTY");
+            if (EMPTY !== exp_val)
+                report_err(exp_val ? "FIFO should be EMPTY" : "FIFO should not be EMPTY");
         end
     endtask
 
