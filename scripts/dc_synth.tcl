@@ -60,9 +60,10 @@ elaborate $TOP -library WORK
 current_design $TOP
 link
 
-# 必须在 elaborate/link 之后：此时才有 current_design
-# 工作条件：与 .db 库 corner 一致（报告里 tt0p9v25c）
-set_operating_conditions tt0p9v25c [current_design]
+# 必须在 elaborate/link 之后执行
+# DC 2016: 用 -library 指定 corner，不要写 [current_design]（会报 CMD-012）
+set LIB_NAME tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
+set_operating_conditions tt0p9v25c -library $LIB_NAME
 
 # 线负载模型：综合阶段估算连线延时
 set_wire_load_mode top
