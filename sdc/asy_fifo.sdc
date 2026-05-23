@@ -29,23 +29,15 @@ set_clock_groups -asynchronous \
     -group [get_clocks r_clk]
 
 # -----------------------------------------------------------------------------
-# 2. 跨时钟域 (CDC) — 格雷码同步链
+# 2. 跨时钟域 (CDC)
 # -----------------------------------------------------------------------------
+# 说明（初学者）:
+#   - set_clock_groups -asynchronous 已声明 w_clk / r_clk 互不同步
+#   - 下面 false_path 让 DC 2016 不分析跨时钟 setup/hold
+#   - 格雷同步链功能正确性靠 RTL + 仿真验证
+#   - 带 -datapath_only 的 set_max_delay 是 PrimeTime 写法，DC 2016 不支持
+#   - 若以后用 PT signoff，可对 *w_addr_grey_d1_reg* / *r_addr_grey_d1_reg* 再约束
 
-# 进入对方时钟域「第一级同步寄存器」的路径，限制最大延时
-# 经验值：略小于源时钟周期，保证同步器在 1 个源时钟周期内采样稳定
-set CDC_MAX_DELAY 8.0
-
-# 写域 w_addr_grey -> 读域 READ1 第一级同步 D 端
-set_max_delay $CDC_MAX_DELAY -from [get_clocks w_clk] \
-    -to [get_pins -hierarchical *w_addr_grey_d1_reg*/D] -datapath_only
-
-# 读域 r_addr_grey -> 写域 WRITE1 第一级同步 D 端
-set_max_delay $CDC_MAX_DELAY -from [get_clocks r_clk] \
-    -to [get_pins -hierarchical *r_addr_grey_d1_reg*/D] -datapath_only
-
-# 其余跨时钟路径（双口 RAM 数据、异步握手等）不做常规 setup 分析
-# 功能正确性由格雷指针 + 仿真验证
 set_false_path -from [get_clocks w_clk] -to [get_clocks r_clk]
 set_false_path -from [get_clocks r_clk] -to [get_clocks w_clk]
 

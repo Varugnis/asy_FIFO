@@ -46,13 +46,6 @@ define_design_lib WORK -path ./WORK
 # RTL 搜索路径
 set_app_var search_path [list .. [file normalize ../rtl]]
 
-# 工作条件：与 .db 库名中的 corner 一致（报告里 tt0p9v25c）
-# 告诉工具按该电压/温度角估算单元延时
-set_operating_conditions tt0p9v25c -library tcbn28hpcplusbwp12t30p140tt0p9v25c_ccs
-
-# 线负载模型：综合阶段用默认 WLM 估算连线延时（非版图后精确寄生）
-set_wire_load_mode top
-
 # -----------------------------------------------------------------------------
 # 3. 读入 RTL 并展开层次
 # -----------------------------------------------------------------------------
@@ -66,6 +59,13 @@ analyze -format sverilog -library WORK [file normalize ../rtl/asy_fifo_top.sv]
 elaborate $TOP -library WORK
 current_design $TOP
 link
+
+# 必须在 elaborate/link 之后：此时才有 current_design
+# 工作条件：与 .db 库 corner 一致（报告里 tt0p9v25c）
+set_operating_conditions tt0p9v25c [current_design]
+
+# 线负载模型：综合阶段估算连线延时
+set_wire_load_mode top
 
 # -----------------------------------------------------------------------------
 # 4. 设计规则约束（DRC，防止单元过大/过慢）
